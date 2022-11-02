@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongoose://localhost/autores", {
+mongoose.connect("mongodb://localhost/autores", {
     useNewUrlParser : true,
     useUnifiedTopology : true
 })
+    .then(() => console.log("Conectado a DB"))
+    .catch(err => console.log("Error al conectarse a BD", err));
