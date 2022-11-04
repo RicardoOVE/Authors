@@ -16,7 +16,7 @@ const TodosAutores = () => {
         axios.delete("http://localhost:8000/api/autores/" + id)
             .then( res => {
                 //Actualizar la lista de autores por medio de filter
-                let nuevaLista = autores.filter(autor => autor._id != id)
+                let nuevaLista = autores.filter(autor => autor._id !== id)
                 setAutores(nuevaLista);
             })
     }

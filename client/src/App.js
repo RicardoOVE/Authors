@@ -13,6 +13,9 @@ const App = () => {
           <Route path="/nuevo" render={()=> <NuevoAutor /> } />
           <Route path="/autor/editar/:id" render={() => <ActualizarAutor /> } />
           <Route path="/error" render={() => <Error /> } />
+          
+          <Route path="*" render={() => <Error /> } />
+
         </Switch>
       </BrowserRouter>
     </div>

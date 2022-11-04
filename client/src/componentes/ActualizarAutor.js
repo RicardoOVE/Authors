@@ -25,12 +25,14 @@ const ActualizarAutor = () => {
                 setArticulos(res.data.articulos);
             })
             .catch(err => history.push('/error'));
-    }, [id])
+    }, [id, history])
+
+    // }, [id])
 
 
     const updateAutor = e => {
         e.preventDefault();
-        axios.put("http://localhost:8000/api/autores" + id , {
+        axios.put("http://localhost:8000/api/autores/" + id , {
             nombre,
             imagen,
             libros,
