@@ -6,9 +6,10 @@ create subfolders (server folders)
 
 2nda terminal (instalación React):
 npx create-react-app client
+cd client
 npm install axios react-router-dom@5.3.0
 
-cd client <- si genera error 
+ <- si genera error 
 npm start
 
 1ra terminal:
