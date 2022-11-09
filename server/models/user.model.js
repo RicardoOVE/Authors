@@ -40,10 +40,14 @@ UserSchema.pre('validate', function(next){
 })
 
 //Antes de guardar el suariok, encriptamos al contraseña
+// 10 => Salt: cantidad que se encripta la contraseña
 UserSchema.pre('save', function(next){
     bcrypt.hash(this.password, 10)
-    .then(has => {
-        this.password = hash;
-        next();
-    })
-})
+        .then(hash => {
+            this.password = hash;
+            next();
+        });
+});
+
+const Usuario = mongoose.model("usuarios", UserSchema);
+module.exports = Usuario;

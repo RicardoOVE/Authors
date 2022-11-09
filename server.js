@@ -9,7 +9,6 @@ npx create-react-app client
 cd client
 npm install axios react-router-dom@5.3.0
 
- <- si genera error 
 npm start
 
 1ra terminal:
@@ -24,11 +23,19 @@ Crear mongoose.config.js
 autor.modelo.js
 autor.controller.js
 autor.routes.js
+
+npm install bcrypt
+npm install jsonwebtoken cookie-parser
 */
 
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
+const cookieParser = require('cookie-parser')
+
+//Para usar cookies en la aplicación
+app.use(cookieParser());
 
 //Para poder usar Json y obtener datos de la url
 app.use( express.json(), express.urlencoded({extended: true}) );
@@ -36,7 +43,8 @@ app.use( express.json(), express.urlencoded({extended: true}) );
 //Permite accesar de un origen distinto
 app.use(
     cors({
-        origin: "http://localhost:3000"
+        origin: "http://localhost:3000",
+        credentials: true // Usuario haya iniciado sesión, que tenga credenciales
     })
 );
 
