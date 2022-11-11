@@ -1,6 +1,7 @@
 const AutorController = require("../controllers/autor.controller");
 const UserController = require("../controllers/user.controller")
 
+
 module.exports = app => {
     app.get("/api/autores", authenticate, AutorController.get_all);
     app.post("/api/autores", authenticate, AutorController.create_autor);
